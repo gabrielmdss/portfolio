@@ -1,0 +1,96 @@
+.projetos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  font-weight: bold;
+  font-size: 40px;
+  color: #111827;
+}
+.descricao {
+  color: #2d3441;
+  font-size: 20px;
+  text-align: center;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #f5f6f8;
+  margin: 0 5% 0 5%;
+  border-radius: 15px;
+  padding: 2%;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
+  transition: box-shadow 0.3s ease; 
+}
+
+.card:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+  font-weight: bold;
+  font-size: 30px;
+  color: #111827;
+}
+.card-descricao {
+  color: #2d3441;
+  font-size: 20px;
+  text-align: start;
+}
+
+.card-list {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.card-list-item {
+  width: auto;
+  text-decoration: none;
+  font-size: 20px;
+  background-color: #eff6ff;
+  color: #2563ec;
+  padding: 5px;
+  border-radius: 15px;
+  text-decoration: none;
+  font-weight: 500;
+}
+.card-buttons {
+  width: 30%;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+}
+
+.github-button {
+  min-width: 100px;
+  background-color: #111827;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 10px;
+  color: #eff6ff;
+  border: none;
+}
+.github-button:hover {
+  background-color: #374151;
+}
+.demo-button {
+  min-width: 100px;
+  background-color: #2563eb;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 10px;
+  color: #eff6ff;
+  border: none;
+}
+.demo-button:hover {
+  background-color: #3b82f6;
+}

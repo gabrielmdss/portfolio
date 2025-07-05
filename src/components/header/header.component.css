@@ -1,0 +1,33 @@
+.container {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2%;
+  align-items: center;
+}
+.title {
+  font-weight: 700;
+  font-size: 20px;
+}
+.lista_header {
+  width: 50%;
+  flex-direction: row;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+.item_header:hover {
+  font-weight: bold;
+}
+.item_header:hover {
+  font-weight: bold;
+}
+.link_item_header {
+  text-decoration: none;
+  color: gray;
+}
+.link_item_header:hover {
+  text-decoration: none;
+  color: black;
+}

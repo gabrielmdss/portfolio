@@ -1,0 +1,33 @@
+.informacoes_pessoais {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #f9fafb;
+  padding-top: 3%;
+}
+.foto_perfil {
+  border-radius: 100%;
+  border: 5px solid #6c56ef;
+  width: 250px;
+  height: 250px;
+}
+.title {
+  font-weight: bold;
+  font-size: 40px;
+  color: #111827;
+}
+.subtittle {
+  font-weight: lighter;
+  color: #4e63eb;
+}
+
+.descricao {
+  color: #2d3441;
+  font-size: 20px;
+  text-align: center;
+}
+.descricao span {
+  color: #111827;
+  font-weight: bold;
+}

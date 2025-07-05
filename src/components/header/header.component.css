@@ -1,16 +1,17 @@
 .header_container {
-  width: 100%;             
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 2%;
   align-items: center;
-  box-sizing: border-box;  
+  box-sizing: border-box;
 }
 
 .title {
   font-weight: 700;
-  font-size: 20px;
+  font-size: 25px;
+  color: #111827;
 }
 .lista_header {
   width: 50%;
@@ -21,15 +22,17 @@
 }
 .item_header:hover {
   font-weight: bold;
+  color: #2d3441;
 }
 .item_header:hover {
   font-weight: bold;
+  color: #111827;
 }
 .link_item_header {
   text-decoration: none;
-  color: gray;
+  color: #2d3441;
 }
 .link_item_header:hover {
   text-decoration: none;
-  color: black;
+  color: #111827;
 }

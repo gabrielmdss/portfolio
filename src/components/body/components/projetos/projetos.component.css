@@ -15,9 +15,17 @@
   text-align: center;
 }
 
+.card-container {
+  flex-direction: row;
+  display: flex;
+  margin-top: 2%;
+  justify-content: space-around;
+}
+
 .card {
   background-color: #ffffff;
   border: 1px solid #f5f6f8;
+  max-width: 800px;
   margin: 0 5% 0 5%;
   border-radius: 15px;
   padding: 2%;
@@ -62,7 +70,7 @@
   font-weight: 500;
 }
 .card-buttons {
-  width: 30%;
+  max-width: 40%;
   flex-direction: row;
   display: flex;
   justify-content: space-between;

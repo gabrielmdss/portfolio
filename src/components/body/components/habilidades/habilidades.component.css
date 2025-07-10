@@ -1,0 +1,142 @@
+.habilidades_tecnicas {
+  background-color: #f9fafb;
+  margin-top: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 40px;
+  color: #111827;
+}
+
+.descricao {
+  color: #2d3441;
+  font-size: 20px;
+  text-align: center;
+}
+
+.card-container {
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2%;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #f5f6f8;
+  border-radius: 5px;
+  padding: 1.5rem 1rem;
+  flex: 1 1 280px;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease;
+}
+
+
+.card-lista {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.card-lista-front {
+  padding: 6px 12px;
+  background-color: #f1f6ff;
+  border-radius: 8px;
+  border: 1px solid #c8dcfd;
+  font-size: 16px;
+  color: #3051da;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.card-lista-back {
+  padding: 6px 12px;
+  background-color: #f3fdf4;
+  border-radius: 8px;
+  border: 1px solid #cdf6d2;
+  font-size: 16px;
+  color: #457f45;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+.card-lista-mobile {
+  padding: 6px 12px;
+  background-color: #FAF5FF;
+  border-radius: 8px;
+  border: 1px solid #E8D6FF;
+  font-size: 16px;
+  color: #792fcb;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.card-lista-outros {
+  padding: 6px 12px;
+  background-color: #fdf7ed;
+  border-radius: 8px;
+  border: 1px solid #FED8AB;
+  font-size: 16px;
+  color: #ad4326;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.card ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+
+
+.card h2 {
+  margin-bottom: 1rem;
+  font-size: 20px;
+  color: #1f2937;
+}
+
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 32px;
+  }
+
+  .descricao {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,130 @@
+.projetos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  font-weight: bold;
+  font-size: 40px;
+  color: #111827;
+}
+.descricao {
+  color: #2d3441;
+  font-size: 20px;
+  text-align: center;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2%;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #f5f6f8;
+  border-radius: 15px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease;
+  flex: 1 1 100%;
+  max-width: 800px;
+}
+
+@media (max-width: 768px) {
+  .card {
+    max-width: 95%;
+    margin: 0 auto;
+  }
+
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.card-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.card:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+  font-weight: bold;
+  font-size: 30px;
+  color: #111827;
+}
+.card-descricao {
+  color: #2d3441;
+  font-size: 20px;
+  text-align: start;
+}
+
+.card-list {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.card-list-item {
+  width: auto;
+  text-decoration: none;
+  font-size: 20px;
+  background-color: #eff6ff;
+  color: #2563ec;
+  padding: 5px;
+  border-radius: 15px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.card-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.github-button {
+  min-width: 100px;
+  background-color: #111827;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 10px;
+  color: #eff6ff;
+  border: none;
+}
+.github-button:hover {
+  background-color: #374151;
+}
+.demo-button {
+  min-width: 100px;
+  background-color: #2563eb;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 10px;
+  color: #eff6ff;
+  border: none;
+}
+.demo-button:hover {
+  background-color: #3b82f6;
+}

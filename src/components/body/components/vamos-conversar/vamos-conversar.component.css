@@ -89,7 +89,7 @@
 }
 
 .contato {
-  margin: 3rem auto 0;
+   margin: 3rem auto 4rem;
   text-align: center;
   padding: 3rem 1rem;
   background: linear-gradient(135deg, #3b82f6, #8b5cf6);
@@ -127,34 +127,56 @@
   font-weight: 600;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
-  .card_rede_social {
-    width: 100%;
-    height: auto;
-    padding: 2rem;
-  }
-
   .redes_sociais {
     flex-direction: column;
     gap: 1.5rem;
+    align-items: center;
+    width: 100%;
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
+
+  .card_rede_social {
+    width: 100%;
+    max-width: 350px;
+    padding: 1.5rem;
+    height: auto;
+    margin: 0 auto;
   }
 
   .card_rede_social button {
-    width: 70px;
-    height: 70px;
-    font-size: 24px;
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
+  }
+
+  .card_rede_social p {
+    font-size: 15px;
   }
 
   .title {
-    font-size: 32px;
+    font-size: 28px;
   }
 
   .descricao {
-    font-size: 18px;
+    font-size: 16px;
+    padding: 0 1rem;
   }
 
   .contato {
     padding: 2rem 1rem;
+    margin: 2rem auto 4rem;
+    width: calc(100% - 2rem);
+    box-sizing: border-box;
+  }
+
+  .contato p {
+    font-size: 18px;
+  }
+
+  .contato button {
+    padding: 0.7rem 1.5rem;
+    font-size: 15px;
   }
 }

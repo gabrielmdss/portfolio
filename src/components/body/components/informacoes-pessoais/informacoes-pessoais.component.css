@@ -11,6 +11,7 @@
   border: 5px solid #6c56ef;
   width: 250px;
   height: 250px;
+  object-fit: cover;
 }
 .title {
   font-weight: bold;

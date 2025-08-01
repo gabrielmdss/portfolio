@@ -7,10 +7,10 @@
     </button>
   </div>
 
-  <ul class="lista_header" [class.active]="menuAberto">
-    <li class="item_header"><a href="#" class="link_item_header">Sobre</a></li>
-    <li class="item_header"><a href="#" class="link_item_header">Projetos</a></li>
-    <li class="item_header"><a href="#" class="link_item_header">Habilidades</a></li>
-    <li class="item_header"><a href="#" class="link_item_header">Contato</a></li>
+  <ul class="lista_header" [ngClass]="{ 'active': menuAberto }">
+    <li class="item_header"><a href="#sobre" class="link_item_header">Sobre</a></li>
+    <li class="item_header"><a href="#projetos" class="link_item_header">Projetos</a></li>
+    <li class="item_header"><a href="#habilidades" class="link_item_header">Habilidades</a></li>
+    <li class="item_header"><a href="#contato" class="link_item_header">Contato</a></li>
   </ul>
 </header>

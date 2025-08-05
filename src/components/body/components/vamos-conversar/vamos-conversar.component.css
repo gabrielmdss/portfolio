@@ -129,17 +129,20 @@
 
 @media (max-width: 768px) {
   .redes_sociais {
+    display: flex;
     flex-direction: column;
-    gap: 1.5rem;
     align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
     width: 100%;
     padding: 0 1rem;
     box-sizing: border-box;
+    text-align: center;
   }
 
   .card_rede_social {
     width: 100%;
-    max-width: 350px;
+    max-width: 320px;
     padding: 1.5rem;
     height: auto;
     margin: 0 auto;
@@ -157,11 +160,13 @@
 
   .title {
     font-size: 28px;
+    text-align: center;
   }
 
   .descricao {
     font-size: 16px;
     padding: 0 1rem;
+    text-align: center;
   }
 
   .contato {
@@ -169,6 +174,7 @@
     margin: 2rem auto 4rem;
     width: calc(100% - 2rem);
     box-sizing: border-box;
+    text-align: center;
   }
 
   .contato p {
@@ -180,3 +186,4 @@
     font-size: 15px;
   }
 }
+

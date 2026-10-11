@@ -1,38 +1,32 @@
-<section id="habilidades" class="habilidades_tecnicas">
-  <h2 class="title">{{ t().habilidades.titulo }}</h2>
-  <p class="descricao">{{ t().habilidades.descricao }}</p>
-  <div class="card-container">
-    <div class="card frond_end">
-      <h3>Front-end</h3>
-      <ul class="card-lista">
-        @for (item of front; track item) {
-          <li class="card-lista-front">{{ item }}</li>
-        }
-      </ul>
-    </div>
-    <div class="card back_end">
-      <h3>Back-end</h3>
-      <ul class="card-lista">
-        @for (item of back; track item) {
-          <li class="card-lista-back">{{ item }}</li>
-        }
-      </ul>
-    </div>
-    <div class="card mobile">
-      <h3>Mobile</h3>
-      <ul class="card-lista">
-        @for (item of mobile; track item) {
-          <li class="card-lista-mobile">{{ item }}</li>
-        }
-      </ul>
-    </div>
-    <div class="card outros">
-      <h3>{{ t().habilidades.outros }}</h3>
-      <ul class="card-lista">
-        @for (item of outros; track item) {
-          <li class="card-lista-outros">{{ item }}</li>
-        }
-      </ul>
+<section id="habilidades" class="secao">
+  <div class="secao-conteudo">
+    <h2 class="secao-titulo">{{ t().habilidades.titulo }}</h2>
+    <p class="secao-descricao">{{ t().habilidades.descricao }}</p>
+
+    <dl class="categorias">
+      @for (categoria of categorias; track categoria.nome.en) {
+        <div class="categoria">
+          <dt>{{ categoria.nome[idioma()] }}</dt>
+          <dd>
+            <ul class="tags">
+              @for (item of categoria.itens; track item) {
+                <li class="tag">{{ item }}</li>
+              }
+            </ul>
+          </dd>
+        </div>
+      }
+    </dl>
+
+    <h3 class="subtitulo">{{ t().habilidades.comoTrabalho }}</h3>
+    <div class="principios">
+      @for (principio of principios; track principio.titulo) {
+        <div class="principio">
+          <span class="icone"><i [class]="principio.icone" aria-hidden="true"></i></span>
+          <h4>{{ principio.titulo }}</h4>
+          <p>{{ principio.descricao[idioma()] }}</p>
+        </div>
+      }
     </div>
   </div>
 </section>

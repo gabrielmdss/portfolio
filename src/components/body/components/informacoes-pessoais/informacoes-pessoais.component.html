@@ -1,14 +1,55 @@
-<section id="sobre" class="informacoes_pessoais">
-  <img
-    class="foto_perfil"
-    src="assets/perfil.jpeg"
-    [alt]="t().sobre.fotoAlt"
-    width="250"
-    height="250"
-  />
-  <h1 class="title">Gabriel Mendes</h1>
-  <p class="subtittle">{{ t().sobre.cargo }}</p>
+<section id="sobre" class="hero">
+  <div class="hero_conteudo">
+    <div class="hero_texto">
+      <p class="disponibilidade">
+        <span class="ponto" aria-hidden="true"></span>
+        {{ t().sobre.disponibilidade }}
+      </p>
 
-  <p class="descricao" [innerHTML]="t().sobre.bio"></p>
-  <p class="descricao">{{ t().sobre.bio2 }}</p>
+      <h1 class="nome">Gabriel Mendes</h1>
+      <p class="cargo">{{ t().sobre.cargo }}</p>
+
+      <p class="bio" [innerHTML]="t().sobre.bio"></p>
+      <p class="bio">{{ t().sobre.bio2 }}</p>
+
+      <ul class="fatos">
+        <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i>{{ t().sobre.localizacao }}</li>
+        <li><i class="fa-solid fa-briefcase" aria-hidden="true"></i>{{ t().sobre.anosExperiencia }}</li>
+        <li><i class="fa-solid fa-language" aria-hidden="true"></i>{{ t().sobre.ingles }}</li>
+      </ul>
+
+      <div class="acoes">
+        <a class="botao botao-primario" href="mailto:gersongabriel_@hotmail.com">
+          <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+          {{ t().sobre.botaoContato }}
+        </a>
+        <a
+          class="botao botao-secundario"
+          href="https://linkedin.com/in/gabrielmendesdeveloper"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+          LinkedIn
+        </a>
+        <a
+          class="botao botao-secundario"
+          href="https://github.com/gabrielmdss"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fa-brands fa-github" aria-hidden="true"></i>
+          GitHub
+        </a>
+      </div>
+    </div>
+
+    <img
+      class="foto_perfil"
+      src="assets/perfil.jpeg"
+      [alt]="t().sobre.fotoAlt"
+      width="300"
+      height="300"
+    />
+  </div>
 </section>

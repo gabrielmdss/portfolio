@@ -9,6 +9,7 @@ const pt = {
   },
   header: {
     sobre: 'Sobre',
+    experiencia: 'Experiência',
     projetos: 'Projetos',
     habilidades: 'Habilidades',
     contato: 'Contato',
@@ -17,40 +18,52 @@ const pt = {
     idioma: 'Idioma',
   },
   sobre: {
-    cargo: 'Desenvolvedor Full Stack',
+    disponibilidade: 'Disponível para vagas remotas e projetos freelance',
+    cargo: 'Desenvolvedor Full Stack · TypeScript · Node.js · React Native',
     fotoAlt: 'Foto de perfil de Gabriel Mendes',
     bio:
-      'Desenvolvedor de aplicações web e mobile com mais de 3 anos de experiência. ' +
-      'Atualmente trabalho com <span>Node.js</span> e <span>TypeScript</span> no backend, ' +
-      'criando APIs robustas e escaláveis.<br>No desenvolvimento mobile, utilizo ' +
-      '<span>React Native</span> com <span>Expo</span> para criar aplicações nativas multiplataforma.',
+      'Desenvolvo APIs, aplicações web e apps mobile para empresas, com foco em ' +
+      '<strong>modernizar sistemas legados</strong>. Na <strong>SGN</strong>, software house com ' +
+      '<strong>mais de 160 clientes</strong>, entrego soluções que chegam a boa parte dessa base.',
     bio2:
-      'Apaixonado por tecnologia e sempre em busca de novos desafios, focando em ' +
-      'soluções eficientes e experiências de usuário excepcionais.',
+      'Escrevo código pensando em quem vai mantê-lo: Clean Code, SOLID e Clean Architecture ' +
+      'guiam como eu projeto e evoluo software.',
+    localizacao: 'Brasil (UTC-3)',
+    anosExperiencia: '3+ anos de experiência',
+    ingles: 'Inglês intermediário (B1)',
+    botaoContato: 'Entrar em contato',
+  },
+  experiencia: {
+    titulo: 'Experiência',
+    descricao: 'Onde venho construindo software que roda em produção para empresas reais.',
   },
   projetos: {
-    titulo: 'Projetos em Destaque',
-    descricao: 'Alguns dos projetos que desenvolvi, de sistemas para clientes a aplicações open source',
+    titulo: 'Projetos',
+    descricao: 'Sistemas para clientes e projetos open source. Os dois primeiros estão no ar: teste à vontade.',
+    destaque: 'Em destaque',
+    outros: 'Outros projetos',
+    papel: 'Meu papel',
     tecnologias: 'Tecnologias',
     codigo: 'Código',
     demo: 'Ver demo',
     site: 'Acessar site',
     privado: 'Projeto de cliente · código privado',
     avisoRender: 'Hospedado no plano gratuito do Render: o primeiro acesso pode levar alguns segundos.',
+    imagemAlt: 'Captura de tela do projeto',
   },
   habilidades: {
-    titulo: 'Habilidades Técnicas',
-    descricao: 'Tecnologias e ferramentas que domino para criar soluções completas',
-    outros: 'Outros',
+    titulo: 'Habilidades',
+    descricao: 'As tecnologias que uso no dia a dia e os princípios que guiam meu código.',
+    comoTrabalho: 'Como eu construo software',
   },
   contato: {
-    titulo: 'Vamos Conversar?',
+    titulo: 'Vamos trabalhar juntos?',
     descricao:
-      'Estou sempre aberto a novas oportunidades e projetos interessantes. ' +
-      'Entre em contato para discutirmos como posso ajudar!',
-    chamada: 'Pronto para começar um projeto?',
-    chamadaDescricao: 'Vamos transformar sua ideia em realidade com tecnologias modernas e eficientes.',
-    botao: 'Entrar em contato',
+      'Estou aberto a vagas remotas em tempo integral e a projetos freelance. ' +
+      'Se você está contratando ou tem um projeto em mente, me chame.',
+    chamada: 'Contratando ou com um projeto em mente?',
+    chamadaDescricao: 'Me mande um e-mail ou uma mensagem no LinkedIn.',
+    botao: 'Enviar e-mail',
   },
   footer: {
     texto: 'Desenvolvido com Angular e TypeScript.',
@@ -65,6 +78,7 @@ const en: Traducoes = {
   },
   header: {
     sobre: 'About',
+    experiencia: 'Experience',
     projetos: 'Projects',
     habilidades: 'Skills',
     contato: 'Contact',
@@ -73,40 +87,52 @@ const en: Traducoes = {
     idioma: 'Language',
   },
   sobre: {
-    cargo: 'Full Stack Developer',
+    disponibilidade: 'Open to remote roles and freelance projects',
+    cargo: 'Full Stack Developer · TypeScript · Node.js · React Native',
     fotoAlt: 'Profile photo of Gabriel Mendes',
     bio:
-      'Web and mobile developer with over 3 years of experience. ' +
-      'I currently work with <span>Node.js</span> and <span>TypeScript</span> on the backend, ' +
-      'building robust and scalable APIs.<br>On mobile, I use ' +
-      '<span>React Native</span> with <span>Expo</span> to build cross-platform native apps.',
+      'I build APIs, web and mobile apps for businesses, with a focus on ' +
+      '<strong>modernizing legacy systems</strong>. At <strong>SGN</strong>, a software company with ' +
+      '<strong>160+ business clients</strong>, I ship solutions that reach a large share of that client base.',
     bio2:
-      'Passionate about technology and always looking for new challenges, focused on ' +
-      'efficient solutions and great user experiences.',
+      'I write code with the next maintainer in mind: Clean Code, SOLID and Clean Architecture ' +
+      'guide how I design and evolve software.',
+    localizacao: 'Brazil (UTC-3)',
+    anosExperiencia: '3+ years of experience',
+    ingles: 'Intermediate English (B1)',
+    botaoContato: 'Get in touch',
+  },
+  experiencia: {
+    titulo: 'Experience',
+    descricao: 'Where I have been building production software for real businesses.',
   },
   projetos: {
-    titulo: 'Featured Projects',
-    descricao: 'Some of the projects I have built, from client systems to open source applications',
+    titulo: 'Projects',
+    descricao: 'Client systems and open source work. The first two are live: feel free to try them.',
+    destaque: 'Featured',
+    outros: 'Other projects',
+    papel: 'My role',
     tecnologias: 'Technologies',
     codigo: 'Code',
     demo: 'Live demo',
     site: 'Visit website',
     privado: 'Client project · private code',
     avisoRender: 'Hosted on Render’s free tier: the first load may take a few seconds.',
+    imagemAlt: 'Project screenshot',
   },
   habilidades: {
-    titulo: 'Technical Skills',
-    descricao: 'Technologies and tools I use to build end-to-end solutions',
-    outros: 'Other',
+    titulo: 'Skills',
+    descricao: 'The technologies I use day to day and the principles behind my code.',
+    comoTrabalho: 'How I build software',
   },
   contato: {
-    titulo: 'Let’s Talk',
+    titulo: 'Let’s work together',
     descricao:
-      'I’m always open to new opportunities and interesting projects. ' +
-      'Get in touch and let’s discuss how I can help!',
-    chamada: 'Ready to start a project?',
-    chamadaDescricao: 'Let’s turn your idea into reality with modern, efficient technology.',
-    botao: 'Get in touch',
+      'I’m open to full-time remote positions and freelance projects. ' +
+      'If you’re hiring or have a project in mind, reach out.',
+    chamada: 'Hiring or have a project in mind?',
+    chamadaDescricao: 'Send me an email or a message on LinkedIn.',
+    botao: 'Send an email',
   },
   footer: {
     texto: 'Built with Angular and TypeScript.',

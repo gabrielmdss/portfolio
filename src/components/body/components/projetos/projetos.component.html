@@ -1,68 +1,102 @@
-<section id="projetos" class="projetos">
-  <h2 class="title">{{ t().projetos.titulo }}</h2>
-  <p class="descricao">{{ t().projetos.descricao }}</p>
+<section id="projetos" class="secao secao-alt">
+  <div class="secao-conteudo">
+    <h2 class="secao-titulo">{{ t().projetos.titulo }}</h2>
+    <p class="secao-descricao">{{ t().projetos.descricao }}</p>
 
-  <div class="card-container">
-    @for (projeto of projetos; track projeto.titulo.pt) {
-      <article class="card">
-        <h3 class="card-title">{{ projeto.titulo[idioma()] }}</h3>
-        <p class="card-descricao">{{ projeto.descricao[idioma()] }}</p>
-
-        <ul class="card-destaques">
-          @for (destaque of projeto.destaques; track destaque.pt) {
-            <li>{{ destaque[idioma()] }}</li>
-          }
-        </ul>
-
-        <ul class="card-list" [attr.aria-label]="t().projetos.tecnologias">
-          @for (tecnologia of projeto.tecnologias; track tecnologia) {
-            <li class="card-list-item">{{ tecnologia }}</li>
-          }
-        </ul>
-
-        <div class="card-buttons">
-          @for (repositorio of projeto.repositorios; track repositorio.url) {
-            <a
-              [href]="repositorio.url"
-              class="github-button"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="fa-brands fa-github" aria-hidden="true"></i>
-              {{ t().projetos.codigo }}
-              @if (repositorio.rotulo) {
-                · {{ repositorio.rotulo }}
-              }
+    <h3 class="subtitulo">{{ t().projetos.destaque }}</h3>
+    <div class="grade">
+      @for (projeto of emDestaque; track projeto.titulo.en) {
+        <article class="card card-destaque">
+          @if (projeto.demo) {
+            <a class="card-imagem" [href]="projeto.demo.url" target="_blank" rel="noopener noreferrer" tabindex="-1">
+              <img
+                [src]="projeto.imagem"
+                [alt]="t().projetos.imagemAlt + ': ' + projeto.titulo[idioma()]"
+                width="960"
+                height="600"
+                loading="lazy"
+              />
             </a>
           }
+          <div class="card-corpo">
+            <h4 class="card-titulo">{{ projeto.titulo[idioma()] }}</h4>
+            <p class="card-papel">
+              <span>{{ t().projetos.papel }}:</span> {{ projeto.papel[idioma()] }}
+            </p>
+            <p class="card-descricao">{{ projeto.descricao[idioma()] }}</p>
 
-          @if (projeto.demo; as demo) {
-            <a
-              [href]="demo.url"
-              class="demo-button"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
-              {{ demo.tipo === 'site' ? t().projetos.site : t().projetos.demo }}
-            </a>
-          }
+            @if (projeto.destaques.length) {
+              <ul class="card-destaques">
+                @for (destaque of projeto.destaques; track destaque.en) {
+                  <li>{{ destaque[idioma()] }}</li>
+                }
+              </ul>
+            }
 
-          @if (!projeto.repositorios.length && !projeto.demo) {
-            <span class="badge-privado">
-              <i class="fa-solid fa-lock" aria-hidden="true"></i>
-              {{ t().projetos.privado }}
-            </span>
-          }
-        </div>
+            <ng-container *ngTemplateOutlet="rodape; context: { $implicit: projeto }"></ng-container>
+          </div>
+        </article>
+      }
+    </div>
 
-        @if (projeto.hospedadoNoRender) {
-          <p class="card-aviso">
-            <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
-            {{ t().projetos.avisoRender }}
-          </p>
-        }
-      </article>
-    }
+    <h3 class="subtitulo">{{ t().projetos.outros }}</h3>
+    <div class="grade">
+      @for (projeto of outros; track projeto.titulo.en) {
+        <article class="card">
+          <div class="card-corpo">
+            <h4 class="card-titulo">{{ projeto.titulo[idioma()] }}</h4>
+            <p class="card-papel">
+              <span>{{ t().projetos.papel }}:</span> {{ projeto.papel[idioma()] }}
+            </p>
+            <p class="card-descricao">{{ projeto.descricao[idioma()] }}</p>
+            <ng-container *ngTemplateOutlet="rodape; context: { $implicit: projeto }"></ng-container>
+          </div>
+        </article>
+      }
+    </div>
   </div>
 </section>
+
+<!-- Tecnologias + links, comum aos dois tipos de card -->
+<ng-template #rodape let-projeto>
+  <div class="card-rodape">
+    <ul class="tags" [attr.aria-label]="t().projetos.tecnologias">
+      @for (tecnologia of projeto.tecnologias; track tecnologia) {
+        <li class="tag">{{ tecnologia }}</li>
+      }
+    </ul>
+
+    <div class="card-botoes">
+      @for (repositorio of projeto.repositorios; track repositorio.url) {
+        <a [href]="repositorio.url" class="botao botao-escuro" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-github" aria-hidden="true"></i>
+          {{ t().projetos.codigo }}
+          @if (repositorio.rotulo) {
+            · {{ repositorio.rotulo }}
+          }
+        </a>
+      }
+
+      @if (projeto.demo; as demo) {
+        <a [href]="demo.url" class="botao botao-primario" target="_blank" rel="noopener noreferrer">
+          <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+          {{ demo.tipo === 'site' ? t().projetos.site : t().projetos.demo }}
+        </a>
+      }
+
+      @if (!projeto.repositorios.length && !projeto.demo) {
+        <span class="badge-privado">
+          <i class="fa-solid fa-lock" aria-hidden="true"></i>
+          {{ t().projetos.privado }}
+        </span>
+      }
+    </div>
+
+    @if (projeto.hospedadoNoRender) {
+      <p class="card-aviso">
+        <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+        {{ t().projetos.avisoRender }}
+      </p>
+    }
+  </div>
+</ng-template>

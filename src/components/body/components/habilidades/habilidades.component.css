@@ -1,143 +1,88 @@
-.habilidades_tecnicas {
-  background-color: #f9fafb;
-  margin-top: 2%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.title {
-  font-weight: bold;
-  font-size: 40px;
-  color: #111827;
-}
-
-.descricao {
-  color: #2d3441;
-  font-size: 20px;
-  text-align: center;
-  margin-top: 0;
-}
-
-.card-container {
-  width: 95%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 2%;
-}
-
-.card {
+.categorias {
+  margin: 0 0 3.5rem;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
   background-color: #ffffff;
-  border: 1px solid #f5f6f8;
-  border-radius: 5px;
-  padding: 1.5rem 1rem;
-  flex: 1 1 280px;
-  max-width: 400px;
-  display: flex;
-  flex-direction: column;
+  box-shadow: var(--sombra);
+}
+
+.categoria {
+  display: grid;
+  grid-template-columns: 180px 1fr;
   align-items: center;
-  text-align: center; 
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: box-shadow 0.3s ease;
+  gap: 1rem;
+  padding: 1.1rem 1.5rem;
 }
 
+.categoria + .categoria {
+  border-top: 1px solid var(--cor-borda);
+}
 
-.card-lista {
-  width: 100%;
-  padding: 0;
+.categoria dt {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--cor-texto);
+}
+
+.categoria dd {
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
 }
 
-.card-lista-front {
-  padding: 6px 12px;
-  background-color: #f1f6ff;
-  border-radius: 8px;
-  border: 1px solid #c8dcfd;
-  font-size: 16px;
-  color: #3051da;
-  font-weight: bold;
-  text-align: center;
-  width: 100%;
-  box-sizing: border-box;
+.subtitulo {
+  margin: 0 0 1.25rem;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cor-texto-secundario);
 }
 
-.card-lista-back {
-  padding: 6px 12px;
-  background-color: #f3fdf4;
-  border-radius: 8px;
-  border: 1px solid #cdf6d2;
-  font-size: 16px;
-  color: #457f45;
-  font-weight: bold;
-  text-align: center;
-  width: 100%;
-  box-sizing: border-box;
+.principios {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
 }
 
-
-.card-lista-mobile {
-  padding: 6px 12px;
-  background-color: #FAF5FF;
-  border-radius: 8px;
-  border: 1px solid #E8D6FF;
-  font-size: 16px;
-  color: #792fcb;
-  font-weight: bold;
-  text-align: center;
-  width: 100%;
-  box-sizing: border-box;
+.principio {
+  padding: 1.5rem;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  background-color: var(--cor-fundo-alt);
 }
 
-.card-lista-outros {
-  padding: 6px 12px;
-  background-color: #fdf7ed;
-  border-radius: 8px;
-  border: 1px solid #FED8AB;
-  font-size: 16px;
-  color: #ad4326;
-  font-weight: bold;
-  text-align: center;
-  width: 100%;
-  box-sizing: border-box;
+.icone {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background-color: var(--cor-destaque-suave);
+  color: var(--cor-destaque);
+  font-size: 18px;
 }
 
-.card ul {
-  padding: 0;
+.principio h4 {
+  margin: 1rem 0 0.5rem;
+  font-size: 17px;
+  color: var(--cor-texto);
+}
+
+.principio p {
   margin: 0;
-  list-style: none;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--cor-texto-secundario);
 }
 
-
-
-.card h3 {
-  margin-bottom: 1rem;
-  font-size: 20px;
-  color: #1f2937;
-}
-
-
-@media (max-width: 768px) {
-  .title {
-    font-size: 32px;
+@media (max-width: 860px) {
+  .principios {
+    grid-template-columns: 1fr;
   }
 
-  .descricao {
-    font-size: 16px;
-    padding: 0 10px;
-  }
-
-  .card {
-    padding: 1rem;
+  .categoria {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+    padding: 1rem 1.25rem;
   }
 }

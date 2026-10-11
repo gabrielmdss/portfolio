@@ -35,11 +35,11 @@ describe('AppComponent', () => {
 
     idioma.alterar('en');
     fixture.detectChanges();
-    expect(compiled.querySelector('#projetos h2')?.textContent).toContain('Featured Projects');
+    expect(compiled.querySelector('#projetos h2')?.textContent).toContain('Projects');
 
     idioma.alterar('pt');
     fixture.detectChanges();
-    expect(compiled.querySelector('#projetos h2')?.textContent).toContain('Projetos em Destaque');
+    expect(compiled.querySelector('#projetos h2')?.textContent).toContain('Projetos');
     expect(document.documentElement.lang).toBe('pt-BR');
   });
 });

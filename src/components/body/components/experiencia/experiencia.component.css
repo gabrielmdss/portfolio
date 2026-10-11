@@ -1,0 +1,104 @@
+.linha_tempo {
+  position: relative;
+  margin: 0;
+  padding: 0 0 0 2rem;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Linha vertical da timeline */
+.linha_tempo::before {
+  content: '';
+  position: absolute;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  left: 6px;
+  width: 2px;
+  background-color: var(--cor-borda);
+}
+
+.item {
+  position: relative;
+  padding: 1.75rem;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  background-color: #ffffff;
+  box-shadow: var(--sombra);
+}
+
+/* Marcador na linha do tempo */
+.item::before {
+  content: '';
+  position: absolute;
+  top: 2rem;
+  left: calc(-2rem + 1px);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--cor-destaque);
+  box-shadow: 0 0 0 4px var(--cor-destaque-suave);
+}
+
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.empresa {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--cor-texto);
+}
+
+.cargo {
+  margin: 0.25rem 0 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--cor-destaque);
+}
+
+.periodo {
+  padding: 4px 12px;
+  border-radius: 999px;
+  background-color: var(--cor-fundo-alt);
+  border: 1px solid var(--cor-borda);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--cor-texto-secundario);
+  white-space: nowrap;
+}
+
+.resumo {
+  margin: 1rem 0 0.75rem;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--cor-texto-secundario);
+}
+
+.conquistas {
+  margin: 0 0 1.25rem;
+  padding-left: 1.25rem;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--cor-texto);
+}
+
+@media (max-width: 768px) {
+  .linha_tempo {
+    padding-left: 1.5rem;
+  }
+
+  .item {
+    padding: 1.25rem;
+  }
+
+  .item::before {
+    left: calc(-1.5rem + 1px);
+  }
+}

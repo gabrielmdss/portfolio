@@ -1,60 +1,128 @@
-.informacoes_pessoais {
-  align-items: center;
+.hero {
+  background-color: var(--cor-fundo-alt);
+  border-bottom: 1px solid var(--cor-borda);
+  padding: 5rem 1.5rem;
+}
+
+.hero_conteudo {
+  max-width: var(--largura-conteudo);
+  margin: 0 auto;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: #f9fafb;
-  padding-top: 3%;
-}
-.foto_perfil {
-  border-radius: 100%;
-  border: 5px solid #6c56ef;
-  width: 250px;
-  height: 250px;
-  object-fit: cover;
-}
-.title {
-  font-weight: bold;
-  font-size: 40px;
-  color: #111827;
-  margin-bottom: 0;
-}
-.subtittle {
-  font-size: 24px;
-  font-weight: lighter;
-  color: #4e63eb;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
 }
 
-.descricao {
-  color: #2d3441;
+.hero_texto {
+  max-width: 640px;
+}
+
+.disponibilidade {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 1.5rem;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background-color: #ffffff;
+  border: 1px solid var(--cor-borda);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--cor-texto-secundario);
+}
+
+.ponto {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--cor-sucesso);
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.2);
+}
+
+.nome {
+  margin: 0;
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--cor-texto);
+}
+
+.cargo {
+  margin: 0.75rem 0 1.5rem;
   font-size: 20px;
-  line-height: 1.6;
-  text-align: center;
-  max-width: 900px;
-  padding: 0 1rem;
+  font-weight: 600;
+  color: var(--cor-destaque);
 }
 
-/* spans vêm do [innerHTML] da bio, por isso o ::ng-deep */
-.descricao ::ng-deep span {
-  color: #111827;
-  font-weight: bold;
+.bio {
+  margin: 0 0 1rem;
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--cor-texto-secundario);
 }
 
-@media (max-width: 768px) {
+/* <strong> vem do [innerHTML] da bio, por isso o ::ng-deep */
+.bio ::ng-deep strong {
+  color: var(--cor-texto);
+  font-weight: 600;
+}
+
+.fatos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  margin: 1.5rem 0 2rem;
+  padding: 0;
+  list-style: none;
+  font-size: 15px;
+  color: var(--cor-texto-secundario);
+}
+
+.fatos i {
+  margin-right: 8px;
+  color: var(--cor-destaque);
+}
+
+.acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.foto_perfil {
+  flex-shrink: 0;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid #ffffff;
+  box-shadow: var(--sombra-hover);
+}
+
+@media (max-width: 900px) {
+  .hero {
+    padding: 3rem 1rem;
+  }
+
+  .hero_conteudo {
+    flex-direction: column-reverse;
+    gap: 2rem;
+  }
+
   .foto_perfil {
     width: 180px;
     height: 180px;
   }
 
-  .title {
-    font-size: 32px;
+  .nome {
+    font-size: 38px;
   }
 
-  .subtittle {
-    font-size: 20px;
+  .cargo {
+    font-size: 17px;
   }
 
-  .descricao {
+  .bio {
     font-size: 16px;
   }
 }

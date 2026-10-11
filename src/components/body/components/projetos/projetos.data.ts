@@ -9,10 +9,13 @@ export interface Repositorio {
 export interface Projeto {
   titulo: Localizado;
   descricao: Localizado;
+  papel: Localizado;
   destaques: Localizado[];
   tecnologias: string[];
   repositorios: Repositorio[];
   demo?: { url: string; tipo: 'demo' | 'site' };
+  /** Projetos com imagem aparecem em destaque, em cards maiores. */
+  imagem?: string;
   /** Exibe aviso de cold start do plano gratuito do Render. */
   hospedadoNoRender?: boolean;
 }
@@ -33,6 +36,10 @@ export const PROJETOS: Projeto[] = [
         'inventory control, beneficiary registration and the waiting list, bringing ' +
         'organization and traceability to the entire donation and delivery process.',
     },
+    papel: {
+      pt: 'Full stack: arquitetura, frontend, API e deploy',
+      en: 'Full stack: architecture, frontend, API and deployment',
+    },
     destaques: [
       { pt: 'Controle de estoque de cestas', en: 'Food basket inventory control' },
       { pt: 'Cadastro e gerenciamento de assistidos', en: 'Beneficiary registration and management' },
@@ -45,6 +52,7 @@ export const PROJETOS: Projeto[] = [
       { url: 'https://github.com/gabrielmdss/entregaCerta-backend', rotulo: 'Backend' },
     ],
     demo: { url: 'https://entregacerta-frontend.onrender.com/estoque', tipo: 'demo' },
+    imagem: 'assets/projetos/entrega-certa.webp',
     hospedadoNoRender: true,
   },
   {
@@ -62,6 +70,10 @@ export const PROJETOS: Projeto[] = [
         'custom woodwork services and portfolio, and to drive customers to request quotes ' +
         'and get in touch through social media.',
     },
+    papel: {
+      pt: 'Desenvolvimento completo, do layout ao deploy',
+      en: 'End-to-end development, from layout to deployment',
+    },
     destaques: [
       { pt: 'Portfólio de projetos', en: 'Project portfolio' },
       { pt: 'Catálogo de serviços', en: 'Service catalog' },
@@ -71,6 +83,7 @@ export const PROJETOS: Projeto[] = [
     tecnologias: ['Angular', 'TypeScript', 'HTML', 'CSS'],
     repositorios: [{ url: 'https://github.com/gabrielmdss/servicosPro' }],
     demo: { url: 'https://servicos-pro.vercel.app/', tipo: 'site' },
+    imagem: 'assets/projetos/madeira-arte.webp',
   },
   {
     titulo: {
@@ -79,18 +92,16 @@ export const PROJETOS: Projeto[] = [
     },
     descricao: {
       pt:
-        'Projeto realizado para uma empresa, migrando um sistema legado em Java para uma ' +
-        'arquitetura moderna com Angular no frontend e Node.js no backend, incluindo a ' +
-        'integração com o sistema de emissão de nota fiscal eletrônica (NF-e).',
+        'Migração de um sistema legado em Java para uma arquitetura moderna com Angular no ' +
+        'frontend e Node.js no backend, incluindo a integração com o sistema de emissão de ' +
+        'nota fiscal eletrônica (NF-e).',
       en:
-        'Client project migrating a legacy Java system to a modern architecture with Angular ' +
-        'on the frontend and Node.js on the backend, including integration with Brazil’s ' +
-        'electronic invoicing system (NF-e).',
+        'Migrated a legacy Java system to a modern architecture with Angular on the frontend ' +
+        'and Node.js on the backend, including integration with Brazil’s electronic ' +
+        'invoicing system (NF-e).',
     },
-    destaques: [
-      { pt: 'Migração de Java para Angular + Node.js', en: 'Migration from Java to Angular + Node.js' },
-      { pt: 'Integração com emissão de NF-e', en: 'Electronic invoice (NF-e) integration' },
-    ],
+    papel: { pt: 'Full stack (freelance)', en: 'Full stack (freelance)' },
+    destaques: [],
     tecnologias: ['Angular', 'Node.js', 'TypeScript', 'Express'],
     repositorios: [],
   },
@@ -101,62 +112,56 @@ export const PROJETOS: Projeto[] = [
     },
     descricao: {
       pt:
-        'Aplicativo multiplataforma que estende um ERP legado desenvolvido em Centura, ' +
-        'permitindo acesso remoto a funcionalidades essenciais como visualização de dados ' +
-        'e controle de pedidos, integrado ao backend existente.',
+        'App multiplataforma que estende um ERP legado em Centura, dando acesso remoto a ' +
+        'funcionalidades essenciais como consulta de dados e controle de pedidos, integrado ' +
+        'ao backend existente.',
       en:
-        'Cross-platform app that extends a legacy ERP built in Centura, giving remote access ' +
-        'to core features such as data lookup and order management, integrated with the ' +
-        'existing backend.',
+        'Cross-platform app that extends a legacy Centura ERP, giving remote access to core ' +
+        'features such as data lookup and order management, integrated with the existing backend.',
     },
-    destaques: [
-      { pt: 'Integração com ERP legado em Centura', en: 'Integration with a legacy Centura ERP' },
-      { pt: 'Consulta de dados e controle de pedidos', en: 'Data lookup and order management' },
-    ],
+    papel: { pt: 'Desenvolvimento mobile (SGN)', en: 'Mobile development (SGN)' },
+    destaques: [],
     tecnologias: ['React Native', 'Expo', 'TypeScript', 'Context API'],
     repositorios: [],
   },
   {
     titulo: {
       pt: 'App Mobile Integrado ao Sistema Apolo',
-      en: 'Mobile App Integrated with the Apolo System',
+      en: 'Mobile App for the Apolo Clinic System',
     },
     descricao: {
       pt:
-        'Aplicativo multiplataforma integrado ao sistema Apolo, voltado para clínicas: ' +
-        'gerencia agendamentos, fluxo de clientes e registro de atendimentos, otimizando ' +
-        'a rotina dos profissionais de saúde.',
+        'App multiplataforma integrado ao sistema Apolo, voltado para clínicas: gerencia ' +
+        'agendamentos, fluxo de clientes e registro de atendimentos, otimizando a rotina dos ' +
+        'profissionais de saúde.',
       en:
         'Cross-platform app integrated with the Apolo system for healthcare clinics: it ' +
         'manages appointments, patient flow and visit records, streamlining the daily ' +
         'routine of healthcare professionals.',
     },
-    destaques: [
-      { pt: 'Gerenciamento de agendamentos', en: 'Appointment scheduling' },
-      { pt: 'Controle de fluxo de clientes', en: 'Patient flow control' },
-      { pt: 'Registro de atendimentos', en: 'Visit records' },
-    ],
+    papel: { pt: 'Desenvolvimento mobile (SGN)', en: 'Mobile development (SGN)' },
+    destaques: [],
     tecnologias: ['React Native', 'Expo', 'TypeScript'],
     repositorios: [],
   },
   {
     titulo: {
-      pt: 'Sistema de Folha de Pagamento',
-      en: 'Payroll System',
+      pt: 'Streaming Multiplataforma - SOLID na Prática',
+      en: 'Multi-platform Streaming - SOLID in Practice',
     },
     descricao: {
       pt:
-        'Sistema web para gestão de folha de pagamento, com cálculo de salários, descontos ' +
-        'e benefícios e geração de relatórios mensais para a área administrativa.',
+        'API que cria serviços de transmissão para YouTube, Twitch e Facebook Live de forma ' +
+        'dinâmica, aplicando Factory Method e os cinco princípios SOLID: novas plataformas ' +
+        'entram sem alterar o código existente.',
       en:
-        'Web-based payroll management system that calculates salaries, deductions and ' +
-        'benefits and generates monthly reports for the administrative team.',
+        'API that dynamically creates streaming services for YouTube, Twitch and Facebook ' +
+        'Live, applying the Factory Method pattern and all five SOLID principles: new ' +
+        'platforms plug in without changing existing code.',
     },
-    destaques: [
-      { pt: 'Cálculo de salários, descontos e benefícios', en: 'Salary, deduction and benefit calculation' },
-      { pt: 'Relatórios mensais', en: 'Monthly reports' },
-    ],
-    tecnologias: ['JavaScript', 'jQuery', 'PHP'],
-    repositorios: [],
+    papel: { pt: 'Projeto open source', en: 'Open source project' },
+    destaques: [],
+    tecnologias: ['TypeScript', 'Node.js', 'Express', 'Swagger', 'SOLID', 'Factory Method'],
+    repositorios: [{ url: 'https://github.com/gabrielmdss/solid-factory-streaming' }],
   },
 ];

@@ -1,24 +1,34 @@
 <section id="sobre" class="hero">
+  <div class="fundo_animado" aria-hidden="true">
+    <span class="bolha bolha_1"></span>
+    <span class="bolha bolha_2"></span>
+  </div>
+
   <div class="hero_conteudo">
     <div class="hero_texto">
-      <p class="disponibilidade">
+      <p class="disponibilidade" appRevelar>
         <span class="ponto" aria-hidden="true"></span>
         {{ t().sobre.disponibilidade }}
       </p>
 
-      <h1 class="nome">Gabriel Mendes</h1>
-      <p class="cargo">{{ t().sobre.cargo }}</p>
+      <h1 class="nome" [appRevelar]="80">Gabriel Mendes</h1>
+      <p class="cargo" [appRevelar]="160">{{ t().sobre.cargo }}</p>
 
-      <p class="bio" [innerHTML]="t().sobre.bio"></p>
-      <p class="bio">{{ t().sobre.bio2 }}</p>
+      <p class="digitando" [appRevelar]="240">
+        {{ t().sobre.digitandoPrefixo }}
+        <span class="digitado" #digitado>{{ t().sobre.especialidades[0] }}</span><span class="cursor" aria-hidden="true"></span>
+      </p>
 
-      <ul class="fatos">
+      <p class="bio" [appRevelar]="320" [innerHTML]="t().sobre.bio"></p>
+      <p class="bio" [appRevelar]="400">{{ t().sobre.bio2 }}</p>
+
+      <ul class="fatos" [appRevelar]="480">
         <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i>{{ t().sobre.localizacao }}</li>
         <li><i class="fa-solid fa-briefcase" aria-hidden="true"></i>{{ t().sobre.anosExperiencia }}</li>
         <li><i class="fa-solid fa-language" aria-hidden="true"></i>{{ t().sobre.ingles }}</li>
       </ul>
 
-      <div class="acoes">
+      <div class="acoes" [appRevelar]="560">
         <a class="botao botao-primario" href="mailto:gersongabriel_@hotmail.com">
           <i class="fa-solid fa-envelope" aria-hidden="true"></i>
           {{ t().sobre.botaoContato }}
@@ -44,12 +54,14 @@
       </div>
     </div>
 
-    <img
-      class="foto_perfil"
-      src="assets/perfil.jpeg"
-      [alt]="t().sobre.fotoAlt"
-      width="300"
-      height="300"
-    />
+    <div class="foto_moldura" [appRevelar]="200">
+      <img
+        class="foto_perfil"
+        src="assets/perfil.jpeg"
+        [alt]="t().sobre.fotoAlt"
+        width="300"
+        height="300"
+      />
+    </div>
   </div>
 </section>

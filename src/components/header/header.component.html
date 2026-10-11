@@ -28,24 +28,48 @@
 
       <button
         type="button"
+        class="tema_btn"
+        (click)="alternarTema()"
+        [attr.aria-label]="tema() === 'dark' ? t().header.temaClaro : t().header.temaEscuro"
+        [title]="tema() === 'dark' ? t().header.temaClaro : t().header.temaEscuro"
+      >
+        <i class="fa-solid" [class.fa-sun]="tema() === 'dark'" [class.fa-moon]="tema() !== 'dark'" aria-hidden="true"></i>
+      </button>
+
+      <button
+        type="button"
         class="hamburguer_btn"
         (click)="toggleMenu()"
         [attr.aria-label]="menuAberto ? t().header.fecharMenu : t().header.abrirMenu"
         [attr.aria-expanded]="menuAberto"
         aria-controls="menu-principal"
       >
-        ☰
+        <i class="fa-solid" [class.fa-xmark]="menuAberto" [class.fa-bars]="!menuAberto" aria-hidden="true"></i>
       </button>
     </div>
   </div>
 
   <nav class="nav_header">
     <ul id="menu-principal" class="lista_header" [ngClass]="{ 'active': menuAberto }">
-      <li class="item_header"><a href="#sobre" class="link_item_header" (click)="fecharMenu()">{{ t().header.sobre }}</a></li>
-      <li class="item_header"><a href="#experiencia" class="link_item_header" (click)="fecharMenu()">{{ t().header.experiencia }}</a></li>
-      <li class="item_header"><a href="#projetos" class="link_item_header" (click)="fecharMenu()">{{ t().header.projetos }}</a></li>
-      <li class="item_header"><a href="#habilidades" class="link_item_header" (click)="fecharMenu()">{{ t().header.habilidades }}</a></li>
-      <li class="item_header"><a href="#contato" class="link_item_header" (click)="fecharMenu()">{{ t().header.contato }}</a></li>
+      <li><a href="#sobre" class="link_item_header" [class.ativo]="secaoAtiva() === 'sobre'" (click)="fecharMenu()">{{ t().header.sobre }}</a></li>
+      <li><a href="#experiencia" class="link_item_header" [class.ativo]="secaoAtiva() === 'experiencia'" (click)="fecharMenu()">{{ t().header.experiencia }}</a></li>
+      <li><a href="#projetos" class="link_item_header" [class.ativo]="secaoAtiva() === 'projetos'" (click)="fecharMenu()">{{ t().header.projetos }}</a></li>
+      <li><a href="#habilidades" class="link_item_header" [class.ativo]="secaoAtiva() === 'habilidades'" (click)="fecharMenu()">{{ t().header.habilidades }}</a></li>
+      <li><a href="#contato" class="link_item_header" [class.ativo]="secaoAtiva() === 'contato'" (click)="fecharMenu()">{{ t().header.contato }}</a></li>
     </ul>
   </nav>
+
+  <div class="progresso" aria-hidden="true"><div #barraProgresso class="progresso_barra"></div></div>
 </header>
+
+<button
+  type="button"
+  class="voltar_topo"
+  [class.visivel]="mostrarVoltarTopo()"
+  (click)="voltarAoTopo()"
+  [attr.aria-label]="t().header.voltarTopo"
+  [title]="t().header.voltarTopo"
+  [attr.tabindex]="mostrarVoltarTopo() ? 0 : -1"
+>
+  <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+</button>

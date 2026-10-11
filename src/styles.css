@@ -1,17 +1,81 @@
 :root {
+  color-scheme: light;
   --cor-destaque: #2563eb;
   --cor-destaque-hover: #1d4ed8;
   --cor-destaque-suave: #eff6ff;
+  --cor-destaque-2: #8b5cf6;
   --cor-texto: #111827;
   --cor-texto-secundario: #4b5563;
+  --cor-texto-terciario: #6b7280;
   --cor-fundo: #ffffff;
   --cor-fundo-alt: #f9fafb;
+  --cor-superficie: #ffffff;
   --cor-borda: #e5e7eb;
+  --cor-header: rgba(255, 255, 255, 0.85);
+  --cor-botao-escuro: #111827;
+  --cor-botao-escuro-hover: #374151;
+  --cor-botao-escuro-texto: #ffffff;
+  --cor-chamada: #111827;
+  --cor-rodape: #111827;
+  --cor-brilho: rgba(37, 99, 235, 0.08);
   --cor-sucesso: #16a34a;
   --raio: 12px;
   --sombra: 0 4px 12px rgba(17, 24, 39, 0.06);
   --sombra-hover: 0 8px 24px rgba(17, 24, 39, 0.1);
   --largura-conteudo: 1100px;
+}
+
+/* Tema escuro: escolha explícita ou, sem escolha salva, preferência do sistema */
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --cor-destaque: #3b82f6;
+  --cor-destaque-hover: #60a5fa;
+  --cor-destaque-suave: rgba(59, 130, 246, 0.14);
+  --cor-destaque-2: #a78bfa;
+  --cor-texto: #f1f5f9;
+  --cor-texto-secundario: #a3b1c6;
+  --cor-texto-terciario: #7c8aa0;
+  --cor-fundo: #0b1120;
+  --cor-fundo-alt: #0f172a;
+  --cor-superficie: #131d31;
+  --cor-borda: #23304a;
+  --cor-header: rgba(11, 17, 32, 0.8);
+  --cor-botao-escuro: #e2e8f0;
+  --cor-botao-escuro-hover: #ffffff;
+  --cor-botao-escuro-texto: #0b1120;
+  --cor-chamada: #16213a;
+  --cor-rodape: #070c18;
+  --opacidade-bolha: 0.35;
+  --cor-brilho: rgba(96, 165, 250, 0.12);
+  --sombra: 0 4px 14px rgba(0, 0, 0, 0.35);
+  --sombra-hover: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+    --cor-destaque: #3b82f6;
+    --cor-destaque-hover: #60a5fa;
+    --cor-destaque-suave: rgba(59, 130, 246, 0.14);
+    --cor-destaque-2: #a78bfa;
+    --cor-texto: #f1f5f9;
+    --cor-texto-secundario: #a3b1c6;
+    --cor-texto-terciario: #7c8aa0;
+    --cor-fundo: #0b1120;
+    --cor-fundo-alt: #0f172a;
+    --cor-superficie: #131d31;
+    --cor-borda: #23304a;
+    --cor-header: rgba(11, 17, 32, 0.8);
+    --cor-botao-escuro: #e2e8f0;
+    --cor-botao-escuro-hover: #ffffff;
+    --cor-botao-escuro-texto: #0b1120;
+    --cor-chamada: #16213a;
+    --cor-rodape: #070c18;
+  --opacidade-bolha: 0.35;
+    --cor-brilho: rgba(96, 165, 250, 0.12);
+    --sombra: 0 4px 14px rgba(0, 0, 0, 0.35);
+    --sombra-hover: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
 }
 
 html,
@@ -35,6 +99,67 @@ body {
   background-color: var(--cor-fundo);
   color: var(--cor-texto);
   -webkit-font-smoothing: antialiased;
+}
+
+/* Suaviza a troca de tema (classe aplicada só durante a troca) */
+html.trocando-tema,
+html.trocando-tema * {
+  transition: background-color 0.35s ease, border-color 0.35s ease, color 0.35s ease !important;
+}
+
+/* ---------- Animações ---------- */
+
+/* Surgir ao rolar: só esconde se o script do <head> confirmou suporte (classe .anima) */
+html.anima .revelar:not(.visivel) {
+  opacity: 0;
+}
+
+html.anima .revelar.visivel {
+  animation: surgir 0.7s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  animation-delay: var(--atraso, 0ms);
+}
+
+@keyframes surgir {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Brilho que segue o cursor (diretiva appInterativo) */
+.interativo {
+  position: relative;
+  isolation: isolate;
+}
+
+.interativo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), var(--cor-brilho), transparent 45%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.interativo:hover::after {
+  opacity: 1;
+}
+
+.tag {
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.tag:hover {
+  transform: translateY(-2px);
+  background-color: var(--cor-destaque);
+  color: #ffffff;
 }
 
 body,
@@ -128,16 +253,16 @@ section[id] {
 }
 
 .botao-escuro {
-  background-color: var(--cor-texto);
-  color: #ffffff;
+  background-color: var(--cor-botao-escuro);
+  color: var(--cor-botao-escuro-texto);
 }
 
 .botao-escuro:hover {
-  background-color: #374151;
+  background-color: var(--cor-botao-escuro-hover);
 }
 
 .botao-secundario {
-  background-color: #ffffff;
+  background-color: var(--cor-superficie);
   border-color: var(--cor-borda);
   color: var(--cor-texto);
 }
@@ -165,5 +290,13 @@ section[id] {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

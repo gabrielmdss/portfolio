@@ -1,10 +1,52 @@
 .hero {
+  position: relative;
+  overflow: hidden;
   background-color: var(--cor-fundo-alt);
   border-bottom: 1px solid var(--cor-borda);
   padding: 5rem 1.5rem;
 }
 
+/* Bolhas de cor desfocadas que flutuam ao fundo */
+.fundo_animado {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.bolha {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: var(--opacidade-bolha, 0.22);
+  animation: flutuar 14s ease-in-out infinite alternate;
+}
+
+.bolha_1 {
+  width: 420px;
+  height: 420px;
+  top: -120px;
+  right: 8%;
+  background: var(--cor-destaque);
+}
+
+.bolha_2 {
+  width: 340px;
+  height: 340px;
+  bottom: -140px;
+  left: -60px;
+  background: var(--cor-destaque-2);
+  animation-duration: 18s;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes flutuar {
+  to {
+    transform: translate(-60px, 50px) scale(1.15);
+  }
+}
+
 .hero_conteudo {
+  position: relative;
   max-width: var(--largura-conteudo);
   margin: 0 auto;
   display: flex;
@@ -24,7 +66,7 @@
   margin: 0 0 1.5rem;
   padding: 6px 14px;
   border-radius: 999px;
-  background-color: #ffffff;
+  background-color: var(--cor-superficie);
   border: 1px solid var(--cor-borda);
   font-size: 14px;
   font-weight: 500;
@@ -36,7 +78,16 @@
   height: 8px;
   border-radius: 50%;
   background-color: var(--cor-sucesso);
-  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.2);
+  animation: pulsar 2s ease-out infinite;
+}
+
+@keyframes pulsar {
+  0% {
+    box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 0 8px rgba(22, 163, 74, 0);
+  }
 }
 
 .nome {
@@ -48,10 +99,42 @@
 }
 
 .cargo {
-  margin: 0.75rem 0 1.5rem;
+  margin: 0.75rem 0 0.5rem;
   font-size: 20px;
   font-weight: 600;
   color: var(--cor-destaque);
+}
+
+.digitando {
+  margin: 0 0 1.5rem;
+  min-height: 1.5em;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--cor-texto);
+}
+
+.digitado {
+  background: linear-gradient(90deg, var(--cor-destaque), var(--cor-destaque-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+}
+
+.cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  margin-left: 3px;
+  vertical-align: text-bottom;
+  background-color: var(--cor-destaque);
+  animation: piscar 1s steps(1) infinite;
+}
+
+@keyframes piscar {
+  50% {
+    opacity: 0;
+  }
 }
 
 .bio {
@@ -89,14 +172,43 @@
   gap: 0.75rem;
 }
 
-.foto_perfil {
+/* Anel em gradiente girando em volta da foto */
+.foto_moldura {
+  position: relative;
   flex-shrink: 0;
+  padding: 6px;
+  border-radius: 50%;
+}
+
+.foto_moldura::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, var(--cor-destaque), var(--cor-destaque-2), transparent 60%, var(--cor-destaque));
+  animation: girar 6s linear infinite;
+}
+
+@keyframes girar {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.foto_perfil {
+  position: relative;
+  display: block;
   width: 300px;
   height: 300px;
   border-radius: 50%;
   object-fit: cover;
-  border: 6px solid #ffffff;
-  box-shadow: var(--sombra-hover);
+  border: 6px solid var(--cor-fundo-alt);
+  box-sizing: border-box;
+  transition: transform 0.4s ease;
+}
+
+.foto_moldura:hover .foto_perfil {
+  transform: scale(1.03);
 }
 
 @media (max-width: 900px) {
@@ -122,7 +234,8 @@
     font-size: 17px;
   }
 
-  .bio {
+  .bio,
+  .digitando {
     font-size: 16px;
   }
 }

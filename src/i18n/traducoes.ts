@@ -16,10 +16,20 @@ const pt = {
     abrirMenu: 'Abrir menu',
     fecharMenu: 'Fechar menu',
     idioma: 'Idioma',
+    temaEscuro: 'Ativar tema escuro',
+    temaClaro: 'Ativar tema claro',
+    voltarTopo: 'Voltar ao topo',
   },
   sobre: {
     disponibilidade: 'Disponível para vagas remotas e projetos freelance',
     cargo: 'Desenvolvedor Full Stack · TypeScript · Node.js · React Native',
+    digitandoPrefixo: 'Eu construo',
+    especialidades: [
+      'APIs escaláveis com Node.js',
+      'apps mobile com React Native',
+      'aplicações web com Angular',
+      'a modernização de sistemas legados',
+    ],
     fotoAlt: 'Foto de perfil de Gabriel Mendes',
     bio:
       'Desenvolvo APIs, aplicações web e apps mobile para empresas, com foco em ' +
@@ -85,10 +95,20 @@ const en: Traducoes = {
     abrirMenu: 'Open menu',
     fecharMenu: 'Close menu',
     idioma: 'Language',
+    temaEscuro: 'Switch to dark theme',
+    temaClaro: 'Switch to light theme',
+    voltarTopo: 'Back to top',
   },
   sobre: {
     disponibilidade: 'Open to remote roles and freelance projects',
     cargo: 'Full Stack Developer · TypeScript · Node.js · React Native',
+    digitandoPrefixo: 'I build',
+    especialidades: [
+      'scalable APIs with Node.js',
+      'mobile apps with React Native',
+      'web applications with Angular',
+      'legacy system modernization',
+    ],
     fotoAlt: 'Profile photo of Gabriel Mendes',
     bio:
       'I build APIs, web and mobile apps for businesses, with a focus on ' +

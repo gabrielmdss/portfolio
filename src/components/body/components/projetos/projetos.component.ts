@@ -1,11 +1,13 @@
 import { NgTemplateOutlet } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { IdiomaService } from '../../../../i18n/idioma.service';
+import { InterativoDirective } from '../../../../animacoes/interativo.directive';
+import { RevelarDirective } from '../../../../animacoes/revelar.directive';
 import { PROJETOS } from './projetos.data';
 
 @Component({
   selector: 'app-projetos',
-  imports: [NgTemplateOutlet],
+  imports: [NgTemplateOutlet, RevelarDirective, InterativoDirective],
   templateUrl: './projetos.component.html',
   styleUrl: './projetos.component.css'
 })

@@ -1,5 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { IdiomaService } from '../../../../i18n/idioma.service';
+import { InterativoDirective } from '../../../../animacoes/interativo.directive';
+import { RevelarDirective } from '../../../../animacoes/revelar.directive';
 import { Localizado } from '../../../../i18n/traducoes';
 
 interface Categoria {
@@ -15,7 +17,7 @@ interface Principio {
 
 @Component({
   selector: 'app-habilidades',
-  imports: [],
+  imports: [RevelarDirective, InterativoDirective],
   templateUrl: './habilidades.component.html',
   styleUrl: './habilidades.component.css'
 })

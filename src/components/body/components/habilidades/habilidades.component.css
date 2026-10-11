@@ -2,7 +2,7 @@
   margin: 0 0 3.5rem;
   border: 1px solid var(--cor-borda);
   border-radius: var(--raio);
-  background-color: #ffffff;
+  background-color: var(--cor-superficie);
   box-shadow: var(--sombra);
 }
 

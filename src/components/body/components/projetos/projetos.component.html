@@ -1,12 +1,12 @@
 <section id="projetos" class="secao secao-alt">
   <div class="secao-conteudo">
-    <h2 class="secao-titulo">{{ t().projetos.titulo }}</h2>
-    <p class="secao-descricao">{{ t().projetos.descricao }}</p>
+    <h2 class="secao-titulo" appRevelar>{{ t().projetos.titulo }}</h2>
+    <p class="secao-descricao" [appRevelar]="80">{{ t().projetos.descricao }}</p>
 
-    <h3 class="subtitulo">{{ t().projetos.destaque }}</h3>
+    <h3 class="subtitulo" appRevelar>{{ t().projetos.destaque }}</h3>
     <div class="grade">
       @for (projeto of emDestaque; track projeto.titulo.en) {
-        <article class="card card-destaque">
+        <article class="card card-destaque" [appRevelar]="$index * 120" appInterativo inclinar>
           @if (projeto.demo) {
             <a class="card-imagem" [href]="projeto.demo.url" target="_blank" rel="noopener noreferrer" tabindex="-1">
               <img
@@ -39,10 +39,10 @@
       }
     </div>
 
-    <h3 class="subtitulo">{{ t().projetos.outros }}</h3>
+    <h3 class="subtitulo" appRevelar>{{ t().projetos.outros }}</h3>
     <div class="grade">
       @for (projeto of outros; track projeto.titulo.en) {
-        <article class="card">
+        <article class="card" [appRevelar]="$index * 100" appInterativo>
           <div class="card-corpo">
             <h4 class="card-titulo">{{ projeto.titulo[idioma()] }}</h4>
             <p class="card-papel">

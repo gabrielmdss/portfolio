@@ -1,11 +1,11 @@
 <section id="habilidades" class="secao">
   <div class="secao-conteudo">
-    <h2 class="secao-titulo">{{ t().habilidades.titulo }}</h2>
-    <p class="secao-descricao">{{ t().habilidades.descricao }}</p>
+    <h2 class="secao-titulo" appRevelar>{{ t().habilidades.titulo }}</h2>
+    <p class="secao-descricao" [appRevelar]="80">{{ t().habilidades.descricao }}</p>
 
     <dl class="categorias">
       @for (categoria of categorias; track categoria.nome.en) {
-        <div class="categoria">
+        <div class="categoria" [appRevelar]="$index * 70">
           <dt>{{ categoria.nome[idioma()] }}</dt>
           <dd>
             <ul class="tags">
@@ -18,10 +18,10 @@
       }
     </dl>
 
-    <h3 class="subtitulo">{{ t().habilidades.comoTrabalho }}</h3>
+    <h3 class="subtitulo" appRevelar>{{ t().habilidades.comoTrabalho }}</h3>
     <div class="principios">
       @for (principio of principios; track principio.titulo) {
-        <div class="principio">
+        <div class="principio" [appRevelar]="$index * 120" appInterativo>
           <span class="icone"><i [class]="principio.icone" aria-hidden="true"></i></span>
           <h4>{{ principio.titulo }}</h4>
           <p>{{ principio.descricao[idioma()] }}</p>

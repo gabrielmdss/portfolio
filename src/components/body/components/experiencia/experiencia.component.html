@@ -1,11 +1,11 @@
 <section id="experiencia" class="secao">
   <div class="secao-conteudo">
-    <h2 class="secao-titulo">{{ t().experiencia.titulo }}</h2>
-    <p class="secao-descricao">{{ t().experiencia.descricao }}</p>
+    <h2 class="secao-titulo" appRevelar>{{ t().experiencia.titulo }}</h2>
+    <p class="secao-descricao" [appRevelar]="80">{{ t().experiencia.descricao }}</p>
 
     <ol class="linha_tempo">
       @for (experiencia of experiencias; track experiencia.empresa) {
-        <li class="item">
+        <li class="item" [appRevelar]="$index * 120" appInterativo>
           <div class="cabecalho">
             <div>
               <h3 class="empresa">{{ experiencia.empresa }}</h3>

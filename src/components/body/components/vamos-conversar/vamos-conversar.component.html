@@ -1,10 +1,10 @@
 <section id="contato" class="secao secao-alt">
   <div class="secao-conteudo">
-    <h2 class="secao-titulo">{{ t().contato.titulo }}</h2>
-    <p class="secao-descricao">{{ t().contato.descricao }}</p>
+    <h2 class="secao-titulo" appRevelar>{{ t().contato.titulo }}</h2>
+    <p class="secao-descricao" [appRevelar]="80">{{ t().contato.descricao }}</p>
 
     <div class="redes_sociais">
-      <a class="card_rede_social" href="mailto:gersongabriel_@hotmail.com">
+      <a class="card_rede_social" appRevelar appInterativo href="mailto:gersongabriel_@hotmail.com">
         <span class="icone email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></span>
         <span class="texto">
           <strong>Email</strong>
@@ -13,6 +13,8 @@
       </a>
       <a
         class="card_rede_social"
+        [appRevelar]="100"
+        appInterativo
         href="https://linkedin.com/in/gabrielmendesdeveloper"
         target="_blank"
         rel="noopener noreferrer"
@@ -25,6 +27,8 @@
       </a>
       <a
         class="card_rede_social"
+        [appRevelar]="200"
+        appInterativo
         href="https://github.com/gabrielmdss"
         target="_blank"
         rel="noopener noreferrer"
@@ -37,7 +41,7 @@
       </a>
     </div>
 
-    <div class="chamada">
+    <div class="chamada" appRevelar>
       <div>
         <p class="chamada_titulo">{{ t().contato.chamada }}</p>
         <p class="chamada_texto">{{ t().contato.chamadaDescricao }}</p>

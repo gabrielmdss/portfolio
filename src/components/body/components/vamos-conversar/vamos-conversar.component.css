@@ -11,7 +11,7 @@
   padding: 1.25rem;
   border: 1px solid var(--cor-borda);
   border-radius: var(--raio);
-  background-color: #ffffff;
+  background-color: var(--cor-superficie);
   box-shadow: var(--sombra);
   text-decoration: none;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
@@ -33,7 +33,7 @@
   border-radius: 12px;
   font-size: 20px;
   color: #ffffff;
-  background-color: var(--cor-texto);
+  background-color: var(--cor-botao-escuro);
 }
 
 .icone.email {
@@ -70,8 +70,9 @@
   margin-top: 2.5rem;
   padding: 2rem;
   border-radius: var(--raio);
-  background-color: var(--cor-texto);
+  background-color: var(--cor-chamada);
   color: #ffffff;
+  border: 1px solid var(--cor-borda);
 }
 
 .chamada_titulo {
@@ -83,7 +84,7 @@
 .chamada_texto {
   margin: 0.4rem 0 0;
   font-size: 16px;
-  color: #d1d5db;
+  color: #cbd5e1;
 }
 
 @media (max-width: 860px) {

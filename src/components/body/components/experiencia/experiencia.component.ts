@@ -1,10 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { IdiomaService } from '../../../../i18n/idioma.service';
+import { InterativoDirective } from '../../../../animacoes/interativo.directive';
+import { RevelarDirective } from '../../../../animacoes/revelar.directive';
 import { EXPERIENCIAS } from './experiencia.data';
 
 @Component({
   selector: 'app-experiencia',
-  imports: [],
+  imports: [RevelarDirective, InterativoDirective],
   templateUrl: './experiencia.component.html',
   styleUrl: './experiencia.component.css'
 })

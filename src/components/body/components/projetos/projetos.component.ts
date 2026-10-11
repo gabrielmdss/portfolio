@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { IdiomaService } from '../../../../i18n/idioma.service';
+import { PROJETOS } from './projetos.data';
 
 @Component({
   selector: 'app-projetos',
@@ -7,5 +9,8 @@ import { Component } from '@angular/core';
   styleUrl: './projetos.component.css'
 })
 export class ProjetosComponent {
-
+  private idiomaService = inject(IdiomaService);
+  idioma = this.idiomaService.idioma;
+  t = this.idiomaService.t;
+  projetos = PROJETOS;
 }

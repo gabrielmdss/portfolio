@@ -15,6 +15,31 @@ app-footer {
   width: 100%;
 }
 
-* {
-  font-family: Arial, Helvetica, sans-serif;
+body {
+  background-color: #ffffff;
+  color: #111827;
+  -webkit-font-smoothing: antialiased;
+}
+
+body,
+button,
+input,
+textarea {
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+/* Compensa o header fixo ao navegar pelas âncoras */
+section[id] {
+  scroll-margin-top: 80px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }

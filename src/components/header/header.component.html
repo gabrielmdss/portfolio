@@ -1,16 +1,50 @@
 <header class="header_container">
   <div class="header_top">
-    <p class="title">Gabriel Mendes</p>
+    <a href="#sobre" class="title">Gabriel Mendes</a>
 
-    <button class="hamburguer_btn" (click)="toggleMenu()" aria-label="Abrir Menu">
-      ☰
-    </button>
+    <div class="header_acoes">
+      <div class="idioma_toggle" role="group" [attr.aria-label]="t().header.idioma">
+        <button
+          type="button"
+          [class.ativo]="idioma() === 'en'"
+          [attr.aria-pressed]="idioma() === 'en'"
+          (click)="alterarIdioma('en')"
+          lang="en"
+          title="English"
+        >
+          EN
+        </button>
+        <button
+          type="button"
+          [class.ativo]="idioma() === 'pt'"
+          [attr.aria-pressed]="idioma() === 'pt'"
+          (click)="alterarIdioma('pt')"
+          lang="pt-BR"
+          title="Português"
+        >
+          PT
+        </button>
+      </div>
+
+      <button
+        type="button"
+        class="hamburguer_btn"
+        (click)="toggleMenu()"
+        [attr.aria-label]="menuAberto ? t().header.fecharMenu : t().header.abrirMenu"
+        [attr.aria-expanded]="menuAberto"
+        aria-controls="menu-principal"
+      >
+        ☰
+      </button>
+    </div>
   </div>
 
-  <ul class="lista_header" [ngClass]="{ 'active': menuAberto }">
-    <li class="item_header"><a href="#sobre" class="link_item_header">Sobre</a></li>
-    <li class="item_header"><a href="#projetos" class="link_item_header">Projetos</a></li>
-    <li class="item_header"><a href="#habilidades" class="link_item_header">Habilidades</a></li>
-    <li class="item_header"><a href="#contato" class="link_item_header">Contato</a></li>
-  </ul>
+  <nav class="nav_header">
+    <ul id="menu-principal" class="lista_header" [ngClass]="{ 'active': menuAberto }">
+      <li class="item_header"><a href="#sobre" class="link_item_header" (click)="fecharMenu()">{{ t().header.sobre }}</a></li>
+      <li class="item_header"><a href="#projetos" class="link_item_header" (click)="fecharMenu()">{{ t().header.projetos }}</a></li>
+      <li class="item_header"><a href="#habilidades" class="link_item_header" (click)="fecharMenu()">{{ t().header.habilidades }}</a></li>
+      <li class="item_header"><a href="#contato" class="link_item_header" (click)="fecharMenu()">{{ t().header.contato }}</a></li>
+    </ul>
+  </nav>
 </header>

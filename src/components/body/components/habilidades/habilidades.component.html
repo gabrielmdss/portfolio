@@ -1,44 +1,38 @@
-<div id="habilidades" class="habilidades_tecnicas">
-  <h1 class="title">Habilidades Técnicas</h1>
-  <p class="descricao">
-    Tecnologias e ferramentas que domino para criar soluções completas
-  </p>
+<section id="habilidades" class="habilidades_tecnicas">
+  <h2 class="title">{{ t().habilidades.titulo }}</h2>
+  <p class="descricao">{{ t().habilidades.descricao }}</p>
   <div class="card-container">
     <div class="card frond_end">
-      <h2>Front-end</h2>
+      <h3>Front-end</h3>
       <ul class="card-lista">
-        <li class="card-lista-front">Angular</li>
-        <li class="card-lista-front">React</li>
-        <li class="card-lista-front">Typescript</li>
-        <li class="card-lista-front">Javascript</li>
+        @for (item of front; track item) {
+          <li class="card-lista-front">{{ item }}</li>
+        }
       </ul>
     </div>
     <div class="card back_end">
-      <h2>Back-end</h2>
+      <h3>Back-end</h3>
       <ul class="card-lista">
-        <li class="card-lista-back">NodeJs</li>
-        <li class="card-lista-back">Typescript</li>
-        <li class="card-lista-back">Express.js</li>
-        <li class="card-lista-back">RESTful APIs</li>
+        @for (item of back; track item) {
+          <li class="card-lista-back">{{ item }}</li>
+        }
       </ul>
     </div>
     <div class="card mobile">
-      <h2>Mobile</h2>
+      <h3>Mobile</h3>
       <ul class="card-lista">
-        <li class="card-lista-mobile">React Native</li>
-        <li class="card-lista-mobile">Expo</li>
-        <li class="card-lista-mobile">Typescript</li>
-        <li class="card-lista-mobile">AsyncStorage</li>
+        @for (item of mobile; track item) {
+          <li class="card-lista-mobile">{{ item }}</li>
+        }
       </ul>
     </div>
     <div class="card outros">
-      <h2>Outros</h2>
+      <h3>{{ t().habilidades.outros }}</h3>
       <ul class="card-lista">
-        <li class="card-lista-outros">SQL Server</li>
-        <li class="card-lista-outros">PostgreSQL</li>
-        <li class="card-lista-outros">Git</li>
-        <li class="card-lista-outros">Postman</li>
+        @for (item of outros; track item) {
+          <li class="card-lista-outros">{{ item }}</li>
+        }
       </ul>
     </div>
   </div>
-</div>
+</section>

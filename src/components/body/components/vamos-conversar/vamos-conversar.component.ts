@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { IdiomaService } from '../../../../i18n/idioma.service';
 
 @Component({
   selector: 'app-vamos-conversar',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './vamos-conversar.component.css'
 })
 export class VamosConversarComponent {
-
+  t = inject(IdiomaService).t;
 }

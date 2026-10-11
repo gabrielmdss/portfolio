@@ -1,36 +1,35 @@
-<div id="contato" class="vamos_conversar">
-  <h5 class="title">Vamos Conversar?</h5>
-  <p class="descricao">
-    Estou sempre aberto a novas oportunidades e projetos interessantes. Entre em contato para discutirmos como posso ajudar!
-  </p>
+<section id="contato" class="vamos_conversar">
+  <h2 class="title">{{ t().contato.titulo }}</h2>
+  <p class="descricao">{{ t().contato.descricao }}</p>
   <div class="redes_sociais">
-    <div class="card_rede_social email">
-      <a href="mailto:gersongabriel_@hotmail.com" target="_blank">
-        <button><i class="fa-solid fa-envelope"></i></button>
-      </a>
+    <a class="card_rede_social email" href="mailto:gersongabriel_@hotmail.com" aria-label="Email">
+      <span class="icone"><i class="fa-solid fa-envelope" aria-hidden="true"></i></span>
       <p>gersongabriel_&#64;hotmail.com</p>
-    </div>
-    <div class="card_rede_social">
-      <a href="https://github.com/gabrielmdss" target="_blank">
-        <button><i class="fa-brands fa-github"></i></button>
-      </a>
+    </a>
+    <a
+      class="card_rede_social"
+      href="https://github.com/gabrielmdss"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="GitHub"
+    >
+      <span class="icone"><i class="fa-brands fa-github" aria-hidden="true"></i></span>
       <p>&#64;gabrielmdss</p>
-    </div>
-    <div class="card_rede_social linkedin">
-      <a href="https://linkedin.com/in/gabrielmendesdeveloper" target="_blank">
-        <button><i class="fa-brands fa-linkedin"></i></button>
-      </a>
+    </a>
+    <a
+      class="card_rede_social linkedin"
+      href="https://linkedin.com/in/gabrielmendesdeveloper"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="LinkedIn"
+    >
+      <span class="icone"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></span>
       <p>&#64;gabrielmendesdeveloper</p>
-    </div>
+    </a>
   </div>
-</div>
+</section>
 <div class="contato">
-  <p>Pronto para começar um projeto?</p>
-  <p>
-    Vamos transformar sua ideia em realidade com tecnologias modernas e
-    eficientes.
-  </p>
-  <button>
-    <a href="mailto:gersongabriel_@hotmail.com"> Entrar em contato </a>
-  </button>
+  <p>{{ t().contato.chamada }}</p>
+  <p>{{ t().contato.chamadaDescricao }}</p>
+  <a class="botao_contato" href="mailto:gersongabriel_@hotmail.com">{{ t().contato.botao }}</a>
 </div>

@@ -92,6 +92,14 @@
       }
     </div>
 
+    @if (projeto.credenciais; as credenciais) {
+      <p class="card-credenciais">
+        <i class="fa-solid fa-key" aria-hidden="true"></i>
+        {{ t().projetos.acessoDemo }}
+        <code>{{ credenciais.login }}</code> / <code>{{ credenciais.senha }}</code>
+      </p>
+    }
+
     @if (projeto.hospedadoNoRender) {
       <p class="card-aviso">
         <i class="fa-solid fa-circle-info" aria-hidden="true"></i>

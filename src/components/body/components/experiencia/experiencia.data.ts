@@ -60,14 +60,18 @@ export const EXPERIENCIAS: Experiencia[] = [
         en: 'Migrated a legacy Java system to Angular + Node.js, including NF-e (e-invoice) integration.',
       },
       {
-        pt: 'Sistema de gestão de doações e estoque para uma ONG, em produção.',
-        en: 'Donation and inventory management system for a non-profit, live in production.',
+        pt:
+          'Sistema de gestão de assistência social para uma pastoral, hoje na segunda versão: ' +
+          'Clean Architecture, JWT, controle de acesso por perfil e ~150 testes automatizados.',
+        en:
+          'Social assistance management system for a non-profit, now in its second version: ' +
+          'Clean Architecture, JWT, role-based access control and ~150 automated tests.',
       },
       {
-        pt: 'Site institucional para uma marcenaria, com portfólio e captação de orçamentos.',
-        en: 'Business website for a woodworking shop, with portfolio and quote requests.',
+        pt: 'Landing page para uma marcenaria, com catálogo de serviços e formulário de orçamento.',
+        en: 'Landing page for a woodworking shop, with service catalog and quote request form.',
       },
     ],
-    tecnologias: ['Angular', 'Node.js', 'TypeScript', 'Prisma', 'PostgreSQL'],
+    tecnologias: ['Angular', 'Node.js', 'TypeScript', 'PostgreSQL', 'JWT', 'Vitest'],
   },
 ];

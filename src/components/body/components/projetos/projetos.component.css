@@ -124,6 +124,25 @@
   border-radius: 10px;
 }
 
+.card-credenciais {
+  margin: 0;
+  font-size: 14px;
+  color: var(--cor-texto-secundario);
+}
+
+.card-credenciais i {
+  margin-right: 6px;
+  color: var(--cor-destaque);
+}
+
+.card-credenciais code {
+  padding: 2px 6px;
+  border-radius: 6px;
+  background-color: var(--cor-destaque-suave);
+  color: var(--cor-texto);
+  font-size: 13px;
+}
+
 .card-aviso {
   margin: 0;
   font-size: 13px;

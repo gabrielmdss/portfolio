@@ -27,15 +27,16 @@ export class HabilidadesComponent {
   t = this.idiomaService.t;
 
   categorias: Categoria[] = [
-    { nome: { pt: 'Backend', en: 'Backend' }, itens: ['Node.js', 'TypeScript', 'Express', 'RESTful APIs', 'Prisma', 'Swagger'] },
-    { nome: { pt: 'Frontend', en: 'Frontend' }, itens: ['Angular', 'React', 'TypeScript', 'JavaScript', 'HTML', 'CSS'] },
+    { nome: { pt: 'Backend', en: 'Backend' }, itens: ['Node.js', 'TypeScript', 'Express', 'RESTful APIs', 'JWT', 'Zod', 'Prisma', 'Swagger / OpenAPI', 'Pino'] },
+    { nome: { pt: 'Frontend', en: 'Frontend' }, itens: ['Angular', 'Signals', 'RxJS', 'React', 'TypeScript', 'JavaScript', 'HTML', 'CSS'] },
     { nome: { pt: 'Mobile', en: 'Mobile' }, itens: ['React Native', 'Expo', 'Context API', 'AsyncStorage'] },
     { nome: { pt: 'Bancos de dados', en: 'Databases' }, itens: ['PostgreSQL', 'SQL Server'] },
+    { nome: { pt: 'Testes', en: 'Testing' }, itens: ['Vitest', 'Supertest', 'Jasmine', 'Karma', 'node:test'] },
     {
       nome: { pt: 'Boas práticas', en: 'Practices' },
-      itens: ['Clean Code', 'SOLID', 'Clean Architecture', 'Design Patterns', 'REST API Design'],
+      itens: ['Clean Code', 'SOLID', 'Clean Architecture', 'Design Patterns', 'REST API Design', 'RBAC'],
     },
-    { nome: { pt: 'Ferramentas', en: 'Tools' }, itens: ['Git', 'GitHub', 'Postman', 'Vercel', 'Render'] },
+    { nome: { pt: 'Ferramentas', en: 'Tools' }, itens: ['Git', 'GitHub', 'ESLint', 'Postman', 'Vercel', 'Render'] },
   ];
 
   principios: Principio[] = [

@@ -38,7 +38,7 @@ const pt = {
     bio2:
       'Escrevo código pensando em quem vai mantê-lo: Clean Code, SOLID e Clean Architecture ' +
       'guiam como eu projeto e evoluo software.',
-    localizacao: 'Brasil (UTC-3)',
+    localizacao: 'Salvador, Brasil (UTC-3)',
     anosExperiencia: '3+ anos de experiência',
     ingles: 'Inglês intermediário (B1)',
     botaoContato: 'Entrar em contato',
@@ -58,6 +58,7 @@ const pt = {
     demo: 'Ver demo',
     site: 'Acessar site',
     privado: 'Projeto de cliente · código privado',
+    acessoDemo: 'Acesso demo (somente leitura):',
     avisoRender: 'Hospedado no plano gratuito do Render: o primeiro acesso pode levar alguns segundos.',
     imagemAlt: 'Captura de tela do projeto',
   },
@@ -117,7 +118,7 @@ const en: Traducoes = {
     bio2:
       'I write code with the next maintainer in mind: Clean Code, SOLID and Clean Architecture ' +
       'guide how I design and evolve software.',
-    localizacao: 'Brazil (UTC-3)',
+    localizacao: 'Salvador, Brazil (UTC-3)',
     anosExperiencia: '3+ years of experience',
     ingles: 'Intermediate English (B1)',
     botaoContato: 'Get in touch',
@@ -137,6 +138,7 @@ const en: Traducoes = {
     demo: 'Live demo',
     site: 'Visit website',
     privado: 'Client project · private code',
+    acessoDemo: 'Demo login (read-only):',
     avisoRender: 'Hosted on Render’s free tier: the first load may take a few seconds.',
     imagemAlt: 'Project screenshot',
   },

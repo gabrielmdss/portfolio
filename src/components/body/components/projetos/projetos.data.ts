@@ -16,6 +16,8 @@ export interface Projeto {
   demo?: { url: string; tipo: 'demo' | 'site' };
   /** Projetos com imagem aparecem em destaque, em cards maiores. */
   imagem?: string;
+  /** Conta pública de demonstração (somente leitura). */
+  credenciais?: { login: string; senha: string };
   /** Exibe aviso de cold start do plano gratuito do Render. */
   hospedadoNoRender?: boolean;
 }
@@ -23,36 +25,51 @@ export interface Projeto {
 export const PROJETOS: Projeto[] = [
   {
     titulo: {
-      pt: 'Entrega Certa - Gestão de Doações',
-      en: 'Entrega Certa - Donation Management',
+      pt: 'Entrega Certa - Gestão de Assistência Social',
+      en: 'Entrega Certa - Social Assistance Management',
     },
     descricao: {
       pt:
-        'Sistema web desenvolvido para uma ONG que distribui cestas básicas. Centraliza o ' +
-        'controle de estoque, o cadastro de assistidos e a lista de espera, trazendo ' +
-        'organização e rastreabilidade para todo o processo de doação e entrega.',
+        'Sistema completo para uma pastoral que distribui cestas básicas: lista de espera, ' +
+        'admissão de famílias, distribuições mensais, check-in e retirada, estoque, montagem ' +
+        'de cestas, relatórios e auditoria. É a segunda versão do projeto, reescrita do zero ' +
+        'com autenticação, permissões por perfil e testes automatizados.',
       en:
-        'Web application built for a non-profit that distributes food baskets. It centralizes ' +
-        'inventory control, beneficiary registration and the waiting list, bringing ' +
-        'organization and traceability to the entire donation and delivery process.',
+        'End-to-end system for a non-profit that distributes food baskets: waiting list, family ' +
+        'admission, monthly distributions, check-in and pickup, inventory, basket assembly, ' +
+        'reports and audit trail. It is the second version of the project, rewritten from ' +
+        'scratch with authentication, role-based permissions and automated tests.',
     },
     papel: {
-      pt: 'Full stack: arquitetura, frontend, API e deploy',
-      en: 'Full stack: architecture, frontend, API and deployment',
+      pt: 'Full stack: arquitetura, frontend, API, banco de dados e deploy',
+      en: 'Full stack: architecture, frontend, API, database and deployment',
     },
     destaques: [
-      { pt: 'Controle de estoque de cestas', en: 'Food basket inventory control' },
-      { pt: 'Cadastro e gerenciamento de assistidos', en: 'Beneficiary registration and management' },
-      { pt: 'Lista de espera e controle de capacidade', en: 'Waiting list and capacity control' },
-      { pt: 'Histórico e relatórios de entregas', en: 'Delivery history and reports' },
+      {
+        pt: 'Clean Architecture no frontend e na API (85 endpoints, 16 módulos)',
+        en: 'Clean Architecture in both frontend and API (85 endpoints, 16 modules)',
+      },
+      {
+        pt: 'Autenticação JWT e controle de acesso com 34 permissões',
+        en: 'JWT authentication and role-based access control with 34 permissions',
+      },
+      {
+        pt: '~150 testes na API, incluindo integração com PostgreSQL real e concorrência',
+        en: '~150 API tests, including integration with real PostgreSQL and concurrency checks',
+      },
+      {
+        pt: 'Documentação OpenAPI, logs estruturados e trilha de auditoria',
+        en: 'OpenAPI docs, structured logging and audit trail',
+      },
     ],
-    tecnologias: ['Angular', 'TypeScript', 'Node.js', 'Express', 'Prisma', 'PostgreSQL'],
+    tecnologias: ['Angular 21', 'Signals', 'Node.js', 'Express', 'PostgreSQL', 'JWT', 'Zod', 'Vitest'],
     repositorios: [
       { url: 'https://github.com/gabrielmdss/pastoral_fronted', rotulo: 'Frontend' },
-      { url: 'https://github.com/gabrielmdss/entregaCerta-backend', rotulo: 'Backend' },
+      { url: 'https://github.com/gabrielmdss/entrega_certa_backend_v3', rotulo: 'API' },
     ],
-    demo: { url: 'https://entregacerta-frontend.onrender.com/estoque', tipo: 'demo' },
-    imagem: 'assets/projetos/entrega-certa.webp',
+    demo: { url: 'https://pastoral-fronted-ashy.vercel.app', tipo: 'demo' },
+    credenciais: { login: 'demo', senha: 'senhaTeste' },
+    imagem: 'assets/projetos/entrega-certa-v2.webp',
     hospedadoNoRender: true,
   },
   {
@@ -62,28 +79,53 @@ export const PROJETOS: Projeto[] = [
     },
     descricao: {
       pt:
-        'Site institucional para a marcenaria Madeira & Arte, criado para apresentar os ' +
-        'serviços personalizados em madeira, divulgar o portfólio e direcionar clientes ' +
-        'para orçamento e contato via redes sociais.',
+        'Landing page para a marcenaria Madeira & Arte, criada para apresentar os serviços ' +
+        'personalizados em madeira com preços de referência, formas de pagamento e um ' +
+        'formulário para o cliente solicitar orçamento.',
       en:
-        'Business website for the Madeira & Arte woodworking shop, built to showcase its ' +
-        'custom woodwork services and portfolio, and to drive customers to request quotes ' +
-        'and get in touch through social media.',
+        'Landing page for the Madeira & Arte woodworking shop, built to present its custom ' +
+        'woodwork services with starting prices, payment options and a form for customers ' +
+        'to request a quote.',
     },
     papel: {
       pt: 'Desenvolvimento completo, do layout ao deploy',
       en: 'End-to-end development, from layout to deployment',
     },
     destaques: [
-      { pt: 'Portfólio de projetos', en: 'Project portfolio' },
-      { pt: 'Catálogo de serviços', en: 'Service catalog' },
-      { pt: 'Formulário de orçamento', en: 'Quote request form' },
-      { pt: 'Integração com WhatsApp e redes sociais', en: 'WhatsApp and social media integration' },
+      { pt: 'Catálogo de serviços com preços e prazos', en: 'Service catalog with prices and lead times' },
+      { pt: 'Formas de pagamento e condições', en: 'Payment options and terms' },
+      { pt: 'Formulário de solicitação de orçamento', en: 'Quote request form' },
+      { pt: 'Renderização no servidor (SSR) e layout responsivo', en: 'Server-side rendering (SSR) and responsive layout' },
     ],
-    tecnologias: ['Angular', 'TypeScript', 'HTML', 'CSS'],
+    tecnologias: ['Angular', 'SSR', 'TypeScript', 'CSS'],
     repositorios: [{ url: 'https://github.com/gabrielmdss/servicosPro' }],
     demo: { url: 'https://servicos-pro.vercel.app/', tipo: 'site' },
     imagem: 'assets/projetos/madeira-arte.webp',
+  },
+  {
+    titulo: {
+      pt: 'Entrega Certa v1 - Controle de Doações',
+      en: 'Entrega Certa v1 - Donation Tracking',
+    },
+    descricao: {
+      pt:
+        'Primeira versão do Entrega Certa: cadastro de assistidos, registro de retiradas e ' +
+        'controle de estoque, com dashboard de gráficos. Os documentos dos assistidos são ' +
+        'criptografados em repouso (AES-256) e a busca usa hash HMAC.',
+      en:
+        'First version of Entrega Certa: beneficiary registration, pickup tracking and ' +
+        'inventory, with a charts dashboard. Identity documents are encrypted at rest ' +
+        '(AES-256) and lookups use an HMAC hash.',
+    },
+    papel: { pt: 'Full stack', en: 'Full stack' },
+    destaques: [],
+    tecnologias: ['Angular', 'Node.js', 'Express', 'Prisma', 'PostgreSQL', 'Chart.js'],
+    repositorios: [
+      { url: 'https://github.com/gabrielmdss/entregacerta-frontend', rotulo: 'Frontend' },
+      { url: 'https://github.com/gabrielmdss/entregaCerta-backend', rotulo: 'API' },
+    ],
+    demo: { url: 'https://entregacerta-frontend.onrender.com/estoque', tipo: 'demo' },
+    hospedadoNoRender: true,
   },
   {
     titulo: {
